@@ -80,8 +80,8 @@ export class ClientDettesComponent implements OnInit {
     }
   }
 
-  voirDetails(detteId: number, sessionId:number) {
-    this.router.navigate(['/admin/client', this.clientId, 'dette', detteId,'session',sessionId, 'justification']);
+  voirDetails(detteId: number) {
+    this.router.navigate(['/client', this.clientId, 'dette', detteId, 'paiements']);
   }
 
   setupPagination() {

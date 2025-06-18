@@ -36,7 +36,7 @@ export class ClientsComponent implements OnInit {
   }
 
   voirDetails(clientId: number) {
-    this.router.navigate(['/admin/client', clientId]);
+    this.router.navigate(['/client', clientId, 'dettes']);
   }
 
   setupPagination() {

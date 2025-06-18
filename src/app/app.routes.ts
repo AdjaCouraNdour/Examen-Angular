@@ -10,7 +10,7 @@ export const routes: Routes = [
     path: 'clients',
     component: ClientsComponent,
     children: [
-      { path: '', component: ClientsComponent }, // page par défaut dans /clients
+      { path: '', component: ClientsComponent }, 
       { path: 'client/:clientId/dettes', component: ClientDettesComponent },
       { path: 'client/:clientId/AddDette', component: AddDetteComponent },
       { path: 'client/:clientId/dette/:detteId/paiements', component: PaiementDetteComponent },
