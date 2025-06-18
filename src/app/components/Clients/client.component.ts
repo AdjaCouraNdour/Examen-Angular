@@ -13,9 +13,9 @@ import { ClientModel } from '../../shared/models/client.model';
 
 export class ClientComponent {
   @Input({
-    alias : "Client", 
+    alias : "client", 
     required: true
-  }) Client!: ClientModel;
+  }) client!: ClientModel;
 
   constructor(private router : Router ) {
   }

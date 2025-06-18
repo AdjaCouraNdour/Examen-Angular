@@ -5,9 +5,9 @@ import { PaiementService } from '../../../shared/services/impl/Paiement.service'
 
 
 @Component({
-  selector: 'app-paiement-dette',
-  templateUrl: './paiement-dette.component.html',
-  styleUrls: ['./paiement-dette.component.css'],
+  selector: 'app-paiemenDette',
+  templateUrl: './paiementDette.component.html',
+  styleUrls: ['./paiementDette.component.css'],
 })
 export class PaiementDetteComponent implements OnInit {
   paiements: PaiementModel[] = [];

@@ -4,7 +4,7 @@
   <div class="flex items-center justify-between bg-[#fff5eb] border border-[#d6a36e] rounded-md px-6 py-4 mb-6 shadow-sm">
     <div class="flex-1">
       <h4 class="text-xl font-bold text-black mb-2">
-        {{ client?.nom }} {{ client?.prenom }}
+        {{ client?.nom }} 
       </h4>
       <div class="flex space-x-6">
         <p class="text-sm text-gray-700"><strong>Téléphone :</strong> {{ client?.telephone }}</p>
@@ -42,7 +42,7 @@
               <td class="px-4 py-2">
                 <button 
                   class="bg-[#5c2b0b] text-white px-3 py-1 rounded hover:bg-[#7a3a0d] transition"
-                  (click)="voirPaiements(dette.id)">
+                  (click)="voirDetails(dette.id,dette.id)">
                   Paiements
                 </button>
               </td>            

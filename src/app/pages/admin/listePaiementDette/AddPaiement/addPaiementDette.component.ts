@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { PaiementService } from '../../../../shared/services/impl/Paiement.service';
 import { PaiementModel } from '../../../../shared/models/Paiment.model';
@@ -7,8 +7,9 @@ import { PaiementModel } from '../../../../shared/models/Paiment.model';
 
 @Component({
   selector: 'app-add-paiement',
-  templateUrl: './add-paiement-dette.component.html',
-  styleUrls: ['./add-paiement-dette.component.css'],
+  templateUrl: './addPaiementDette.component.html',
+  styleUrls: ['./addPaiementDette.component.css'],
+  imports: [ReactiveFormsModule],
 })
 export class AddPaiementDetteComponent implements OnInit {
   formPaiement!: FormGroup;

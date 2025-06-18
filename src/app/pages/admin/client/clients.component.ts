@@ -11,7 +11,7 @@ import { ClientService } from '../../../shared/services/impl/client.service';
   standalone: true,
   imports: [FormsModule, CommonModule],
   templateUrl: './clients.component.html',
-  styleUrl: './clients.component.css'
+  styleUrl: './client.component.css'
 })
 export class ClientsComponent implements OnInit {
   private clientsService: ClientService = inject(ClientService);
@@ -34,7 +34,7 @@ export class ClientsComponent implements OnInit {
       });
   }
 
-  voirDetails(clientId: string) {
+  voirDetails(clientId: number) {
     this.router.navigate(['/admin/client', clientId]);
   }
 

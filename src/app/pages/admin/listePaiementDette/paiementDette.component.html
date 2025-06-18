@@ -13,8 +13,8 @@
         </thead>
         <tbody>
           <tr *ngFor="let paiement of paiements" class="hover:bg-gray-50">
-            <td class="px-4 py-2 text-sm text-gray-800">{{ paiement.datePaiement | date: 'dd/MM/yyyy' }}</td>
-            <td class="px-4 py-2 text-sm text-gray-800">{{ paiement.montant | currency:'XOF':'symbol':'1.0-0' }}</td>
+            <td class="px-4 py-2 text-sm text-gray-800">{{ paiement.datePaiement }}</td>
+            <td class="px-4 py-2 text-sm text-gray-800">{{ paiement.montant  }}</td>
             <td class="px-4 py-2 text-sm text-gray-800">{{ paiement.moyenPaiement }}</td>
           </tr>
         </tbody>
