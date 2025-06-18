@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AddPaiementDetteComponent } from './addPaiementDette.component';
 
-
 describe('AddPaiementDetteComponent', () => {
   let component: AddPaiementDetteComponent;
   let fixture: ComponentFixture<AddPaiementDetteComponent>;
