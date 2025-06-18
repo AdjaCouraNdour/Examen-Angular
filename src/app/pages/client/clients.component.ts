@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { map } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { ClientModel } from '../../../shared/models/client.model';
-import { ClientService } from '../../../shared/services/impl/client.service';
+import { ClientModel } from '../../shared/models/client.model';
+import { ClientService } from '../../shared/services/impl/client.service';
+
 
 @Component({
   selector: 'app-clients',

@@ -1,14 +1,14 @@
 import { Routes } from '@angular/router';
-import { AdminComponent } from './pages/admin/admin.component';
-import { ClientsComponent } from './pages/admin/client/clients.component';
-import { ClientDettesComponent } from './pages/admin/client/listeDettes/clientDettes.component';
-import { PaiementDetteComponent } from './pages/admin/listePaiementDette/paiementDette.component';
-import { AddPaiementDetteComponent } from './pages/admin/listePaiementDette/AddPaiement/addPaiementDette.component';
-import { AddDetteComponent } from './pages/admin/client/addDette/AddDette.component';
+import { ClientsComponent } from './pages/client/clients.component';
+import { ClientDettesComponent } from './pages/client/listeDettes/clientDettes.component';
+import { AddDetteComponent } from './pages/client/addDette/addDette.component';
+import { PaiementDetteComponent } from './pages/client/listePaiementDette/paiementDette.component';
+import { AddPaiementDetteComponent } from './pages/client/AddPaiement/addPaiementDette.component';
+
 export const routes: Routes = [
   {
-    path: "admin",
-    component: AdminComponent,
+    path: "Clients",
+    component: ClientsComponent,
     children: [
       { path: 'clients', component: ClientsComponent },
       { path: 'client/:clientId/dettes', component: ClientDettesComponent },
@@ -19,7 +19,7 @@ export const routes: Routes = [
   },
     {
     path: '',
-    redirectTo: '/admin',
+    redirectTo: '/Clients',
     pathMatch: 'full'
   }
 ];

@@ -1,10 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ClientModel } from '../../../../shared/models/client.model';
-import { ClientService } from '../../../../shared/services/impl/client.service';
-import { DetteService } from '../../../../shared/services/impl/dette.service';
-import { DetteModel } from '../../../../shared/models/dette.model';
+
 import { CommonModule } from '@angular/common';
+import { ClientModel } from '../../../shared/models/client.model';
+import { DetteModel } from '../../../shared/models/dette.model';
+import { ClientService } from '../../../shared/services/impl/client.service';
+import { DetteService } from '../../../shared/services/impl/dette.service';
 
 
 @Component({

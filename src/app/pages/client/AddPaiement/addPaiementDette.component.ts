@@ -1,8 +1,9 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { PaiementService } from '../../../../shared/services/impl/Paiement.service';
-import { PaiementModel } from '../../../../shared/models/Paiment.model';
+import { PaiementService } from '../../../shared/services/impl/Paiement.service';
+import { PaiementModel } from '../../../shared/models/Paiment.model';
+
 
 
 @Component({

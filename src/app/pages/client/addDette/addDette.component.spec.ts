@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AddDetteComponent } from './AddDette.component';
+import { AddDetteComponent } from './addDette.component';
 
 
 describe('AddDetteComponent', () => {

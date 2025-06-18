@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DetteModel } from '../../../../shared/models/dette.model';
-import { ClientService } from '../../../../shared/services/impl/client.service';
-import { ClientModel } from '../../../../shared/models/client.model';
-import { DetteService } from '../../../../shared/services/impl/dette.service';
+import { ClientModel } from '../../../shared/models/client.model';
+import { DetteModel } from '../../../shared/models/dette.model';
+import { ClientService } from '../../../shared/services/impl/client.service';
+import { DetteService } from '../../../shared/services/impl/dette.service';
+
 
 
 @Component({
