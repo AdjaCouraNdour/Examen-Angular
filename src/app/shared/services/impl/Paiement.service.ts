@@ -9,7 +9,7 @@ import { IPaiementService } from '../IPaiementService';
 })
 export class PaiementService implements IPaiementService{
 
-  private apiUrl = 'https://gestion-absence-ism-dev.onrender.com/api/web/Paiements';                        
+private apiUrl = 'http://localhost:3000/paiements';
     
     getAllPaiements(): Observable<any> {
       return this.httpClient.get<any>(this.apiUrl);
@@ -17,12 +17,16 @@ export class PaiementService implements IPaiementService{
     getById(Id: number): Observable<any> {
       return this.httpClient.get<any>(`${this.apiUrl}/${Id}`);
     }
+
+    getByDetteId(detteId: number): Observable<any> {
+      return this.httpClient.get<any>(`${this.apiUrl}?detteId=${detteId}`);
+    }
+    ajouterPaiement(paiement: Partial<PaiementModel>): Observable<PaiementModel> {
+        return this.httpClient.post<PaiementModel>(this.apiUrl, paiement);
+      }
+
   constructor(private httpClient: HttpClient) { }
-  getByDetteId(detteId: number): Observable<any> {
-      return this.httpClient.get<any>(`${this.apiUrl}/${detteId}`);
-  }
  
-   ajouterPaiement(paiement: Partial<PaiementModel>): Observable<PaiementModel> {
-    return this.httpClient.post<PaiementModel>(this.apiUrl, paiement);
-  }
+ 
+   
 }

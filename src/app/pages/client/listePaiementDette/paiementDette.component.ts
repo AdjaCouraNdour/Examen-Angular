@@ -2,12 +2,14 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PaiementModel } from '../../../shared/models/Paiment.model';
 import { PaiementService } from '../../../shared/services/impl/Paiement.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-paiemenDette',
   templateUrl: './paiementDette.component.html',
   styleUrls: ['./paiementDette.component.css'],
+  imports: [CommonModule]
 })
 export class PaiementDetteComponent implements OnInit {
   paiements: PaiementModel[] = [];

@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
-import { ClientModel } from '../../models/client.model';
 import { IClientService } from '../IClientService';
 
 @Injectable({
@@ -9,7 +8,7 @@ import { IClientService } from '../IClientService';
 })
 export class ClientService implements IClientService {
 
-  private apiUrl = 'https://gestion-absence-ism-dev.onrender.com/api/web/Clients';
+private apiUrl = 'http://localhost:3000/clients';
 
     getAllClients(page = 0, size = 5): Observable<any> {
       return this.httpClient.get<any>(`${this.apiUrl}?page=${page}&size=${size}`);

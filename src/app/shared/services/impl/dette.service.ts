@@ -8,15 +8,16 @@ import { DetteModel } from '../../models/dette.model';
 })
 export class DetteService implements IDetteService{
 
-  private apiUrl = 'https://gestion-absence-ism-dev.onrender.com/api/web/absences';
+private apiUrl = 'http://localhost:3000/dettes';
   
     getAllDettes(): Observable<any> {
       return this.httpClient.get<any>(this.apiUrl);
     } 
-  
+ 
     getDettesByClientId(IdClient: number): Observable<any> {
-      return this.httpClient.get<any>(`${this.apiUrl}/${IdClient}`);
-    } 
+      return this.httpClient.get<any>(`${this.apiUrl}?clientId=${IdClient}`);
+    }
+
     getById(Id: number): Observable<any> {
       return this.httpClient.get<any>(`${this.apiUrl}/${Id}`);
     }

@@ -1,0 +1,68 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "nom": "Aliou Ndiaye",
+      "telephone": "770000001",
+      "adresse": "Dakar Liberté 6"
+    },
+    {
+      "id": 2,
+      "nom": "Fatou Diop",
+      "telephone": "770000002",
+      "adresse": "Pikine"
+    }
+  ],
+  "dettes": [
+    {
+      "id": 1,
+      "clientId": 1,
+      "date": "2024-06-15",
+      "montantDette": 50000,
+      "montantPaye": 20000,
+      "montantRestant": 30000
+    },
+    {
+      "id": 2,
+      "clientId": 1,
+      "date": "2024-06-18",
+      "montantDette": 40000,
+      "montantPaye": 15000,
+      "montantRestant": 25000
+    },
+    {
+      "id": 3,
+      "clientId": 2,
+      "date": "2024-06-19",
+      "montantDette": 30000,
+      "montantPaye": 30000,
+      "montantRestant": 0
+    }
+  ],
+  "paiements": [
+    {
+      "id": 1,
+      "detteId": 1,
+      "date": "2024-06-15",
+      "montant": 10000
+    },
+    {
+      "id": 2,
+      "detteId": 1,
+      "date": "2024-06-16",
+      "montant": 10000
+    },
+    {
+      "id": 3,
+      "detteId": 2,
+      "date": "2024-06-18",
+      "montant": 15000
+    },
+    {
+      "id": 4,
+      "detteId": 3,
+      "date": "2024-06-19",
+      "montant": 30000
+    }
+  ]
+}

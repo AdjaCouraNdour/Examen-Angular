@@ -7,19 +7,19 @@ import { AddPaiementDetteComponent } from './pages/client/AddPaiement/addPaiemen
 
 export const routes: Routes = [
   {
-    path: "Clients",
+    path: 'clients',
     component: ClientsComponent,
     children: [
-      { path: 'clients', component: ClientsComponent },
+      { path: '', component: ClientsComponent }, // page par défaut dans /clients
       { path: 'client/:clientId/dettes', component: ClientDettesComponent },
       { path: 'client/:clientId/AddDette', component: AddDetteComponent },
       { path: 'client/:clientId/dette/:detteId/paiements', component: PaiementDetteComponent },
       { path: 'dette/:detteId/AddPaiment', component: AddPaiementDetteComponent },
     ]
   },
-    {
+  {
     path: '',
-    redirectTo: '/Clients',
+    redirectTo: 'clients',
     pathMatch: 'full'
   }
 ];
