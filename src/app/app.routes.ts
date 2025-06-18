@@ -12,7 +12,7 @@ export const routes: Routes = [
     children: [
       { path: '', component: ClientsComponent }, 
       { path: 'client/:clientId/dettes', component: ClientDettesComponent },
-      { path: 'client/:clientId/AddDette', component: AddDetteComponent },
+      { path: 'client/:clientId/addDette', component: AddDetteComponent },
       { path: 'client/:clientId/dette/:detteId/paiements', component: PaiementDetteComponent },
       { path: 'dette/:detteId/AddPaiment', component: AddPaiementDetteComponent },
     ]

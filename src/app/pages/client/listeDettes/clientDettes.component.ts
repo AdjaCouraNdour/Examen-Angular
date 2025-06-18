@@ -80,6 +80,10 @@ export class ClientDettesComponent implements OnInit {
     }
   }
 
+  ajouterDette() {
+    this.router.navigate(['/client', this.clientId, 'addDette']);
+  }
+
   voirDetails(detteId: number) {
     this.router.navigate(['/client', this.clientId, 'dette', detteId, 'paiements']);
   }
