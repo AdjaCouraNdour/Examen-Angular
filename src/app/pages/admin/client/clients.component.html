@@ -1,0 +1,67 @@
+<div class="bg-[#fef8f3] min-h-screen p-8">
+  <div class="max-w-4xl mx-auto border rounded-md border-[#843c0c] p-6 shadow-md bg-white">
+    <h2 class="text-2xl text-[#5c2b0b] font-bold mb-6">Liste des clients</h2>
+
+    <!-- Tableau -->
+    <div class="overflow-x-auto rounded-lg bg-orange-50">
+      <table class="min-w-full text-center">
+        <thead class="bg-[#5c2b0b] text-white">
+          <tr>
+            <th class="px-4 py-2 font-semibold">Nom</th>
+            <th class="px-4 py-2 font-semibold">Téléphone</th>
+            <th class="px-4 py-2 font-semibold">Adresse</th>
+            <th class="px-4 py-2 font-semibold">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let client of clientsPerPage" class="hover:bg-gray-50">
+            <td class="px-4 py-2 text-sm text-gray-800">{{ client.nom }}</td>
+            <td class="px-4 py-2 text-sm text-gray-800">{{ client.telephone }}</td>
+            <td class="px-4 py-2 text-sm text-gray-800">{{ client.adresse }}</td>
+            <td class="px-4 py-2">
+              <button 
+                class="bg-[#5c2b0b] text-white px-3 py-1 rounded hover:bg-[#7a3a0d] transition"
+                (click)="voirDetails(client.id)">
+                Détails
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center items-center gap-2 mt-6">
+      <button 
+        class="bg-[#5b3413] text-white px-3 py-1 rounded-md text-sm font-semibold disabled:opacity-50"
+        (click)="goToPage(currentPage - 1)" 
+        [disabled]="currentPage === 0">
+        Précédent
+      </button>
+
+      <ng-container *ngFor="let page of pages; let i = index">
+        <button 
+          class="px-3 py-1 rounded-md text-sm font-semibold border border-[#5b3413]"
+          [ngClass]="{
+            'bg-[#5b3413] text-white': i === currentPage,
+            'bg-white text-black': i !== currentPage
+          }"
+          (click)="goToPage(i)">
+          {{ i + 1 }}
+        </button>
+      </ng-container>
+
+      <button 
+        class="bg-[#5b3413] text-white px-3 py-1 rounded-md text-sm font-semibold disabled:opacity-50"
+        (click)="goToPage(currentPage + 1)" 
+        [disabled]="currentPage === pages.length - 1">
+        Suivant
+      </button>
+    </div>
+
+    <!-- Résumé -->
+    <div class="text-sm text-gray-600 text-center mt-2">
+      Page {{ currentPage + 1 }} sur {{ pages.length }} ({{ clientsAll.length }} clients au total)
+    </div>
+  </div>
+</div>

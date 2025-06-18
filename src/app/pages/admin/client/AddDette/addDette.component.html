@@ -1,0 +1,64 @@
+<div class="max-w-md mx-auto p-6 bg-white rounded shadow-md border border-gray-200 mt-10">
+  <h2 class="text-2xl font-bold mb-6 text-[#5c2b0b]">Ajouter une dette</h2>
+
+  <form [formGroup]="formDette" (ngSubmit)="onSubmit()">
+
+    <div class="mb-4">
+      <label for="clientId" class="block mb-1 font-medium text-gray-700">Client</label>
+      <select
+        id="clientId"
+        formControlName="clientId"
+        class="w-full border border-gray-300 rounded px-3 py-2"
+        required>
+        <option value="" disabled>Sélectionnez un client</option>
+        <option *ngFor="let client of clients" [value]="client.id">
+          {{ client.nom }} - {{ client.telephone }}
+        </option>
+      </select>
+      <div *ngIf="formDette.get('clientId')?.invalid && formDette.get('clientId')?.touched" class="text-red-600 text-sm mt-1">
+        Veuillez choisir un client.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="date" class="block mb-1 font-medium text-gray-700">Date</label>
+      <input
+        id="date"
+        type="date"
+        formControlName="date"
+        class="w-full border border-gray-300 rounded px-3 py-2"
+        required
+      />
+      <div *ngIf="formDette.get('date')?.invalid && formDette.get('date')?.touched" class="text-red-600 text-sm mt-1">
+        Veuillez saisir une date.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="montantDette" class="block mb-1 font-medium text-gray-700">Montant de la dette</label>
+      <input
+        id="montantDette"
+        type="number"
+        formControlName="montantDette"
+        min="0.01"
+        step="0.01"
+        class="w-full border border-gray-300 rounded px-3 py-2"
+        required
+      />
+      <div *ngIf="formDette.get('montantDette')?.invalid && formDette.get('montantDette')?.touched" class="text-red-600 text-sm mt-1">
+        Veuillez saisir un montant valide.
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="formDette.invalid || loading"
+      class="bg-[#5c2b0b] hover:bg-[#7a3a0d] text-white px-4 py-2 rounded"
+    >
+      Ajouter la dette
+    </button>
+
+    <p class="text-green-600 mt-4" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="text-red-600 mt-4" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+</div>

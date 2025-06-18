@@ -1,0 +1,47 @@
+<div class="max-w-md mx-auto p-6 bg-white rounded shadow-md border border-gray-200 mt-10">
+  <h2 class="text-2xl font-bold mb-6 text-[#5c2b0b]">Ajouter un Paiement</h2>
+
+  <form [formGroup]="formPaiement" (ngSubmit)="onSubmit()">
+
+    <div class="mb-4">
+      <label for="montant" class="block mb-1 font-medium text-gray-700">Montant</label>
+      <input
+        id="montant"
+        type="number"
+        formControlName="montant"
+        min="0.01"
+        step="0.01"
+        class="w-full border border-gray-300 rounded px-3 py-2"
+        required
+      />
+      <div *ngIf="formPaiement.get('montant')?.invalid && formPaiement.get('montant')?.touched" class="text-red-600 text-sm mt-1">
+        Veuillez saisir un montant valide.
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label for="date" class="block mb-1 font-medium text-gray-700">Date</label>
+      <input
+        id="date"
+        type="date"
+        formControlName="date"
+        class="w-full border border-gray-300 rounded px-3 py-2"
+        required
+      />
+      <div *ngIf="formPaiement.get('date')?.invalid && formPaiement.get('date')?.touched" class="text-red-600 text-sm mt-1">
+        Veuillez saisir une date.
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      [disabled]="formPaiement.invalid || loading"
+      class="bg-[#5c2b0b] hover:bg-[#7a3a0d] text-white px-4 py-2 rounded"
+    >
+      Ajouter le paiement
+    </button>
+
+    <p class="text-green-600 mt-4" *ngIf="successMessage">{{ successMessage }}</p>
+    <p class="text-red-600 mt-4" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+</div>
